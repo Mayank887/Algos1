@@ -7,27 +7,39 @@ using namespace std;
 
 
 int main() {
-       string s;
-    
-   int n;
-    cin>>n;
-    cin>>s;
-   int i=0;
-   // Comparing the two halves of the string until they are unequal
-   while(n>1){
-       if(s.substr(0,n/2)==s.substr(n/2,n/2)){
-           i++;
-       }
-       else
-       break;
-       s=s.substr(0,n/2);
-       n=n/2;
-   }
-   cout<<i;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+       int n,r,x,y;
+   //std::cout << "Enter no of days, inital amount, amount increased, amount deducted\n" ;
+   cin>>n>>r>>x>>y;
+   int c[n],s[n];
+   // Taking input if the workshop was conducted on that day or not
+   for(int i=0;i<n;i++){
+   cin>>c[i];}
    
-
- 
- 
+   // Taking input if the workshop was successful or not
+   for(int i=0;i<n;i++){
+       cin>>s[i];
+       
+   }
+   
+   int t=0;
+   for(int i=0;i<n;i++){
+       if(c[i]==1&&s[i]==1)
+       t+=x;                       // Increasing the amount for a successful worshop
+       if(c[i]==1&&s[i]==0)
+       t-=y;                          // Decreasing the amount for a unsuccessful worshop
+       
+   }
+  // cout<<"Initial = "<<r<<" Final = "<<r+t<<"\n";
+  // if the amount is more than initial promoted is printed
+   if(t>0)
+   cout<<"promoted";
+   if(t<0)
+   // if the amount is less than initial demoted is printed
+   cout<<"demoted";
+   if(t==0)
+   // is initial and final amount are equal no change is printed
+   cout<<"no change";
+   
     return 0;
 }
-
