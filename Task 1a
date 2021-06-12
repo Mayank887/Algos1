@@ -1,1 +1,98 @@
 
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+//Adding 1 to the string
+string sum(string s,int n){
+    for(int i=n-1;i>=0;i--){
+        if(s.at(i)=='0'){
+        s.at(i)='1';
+        break;}
+    
+    else{
+    s.at(i)='0';
+        
+    }
+        
+    }
+    return s;
+}
+// Subtracting 1 from the string
+string diff(string s,int n){
+    
+    for(int i=n-1;i>=0;i--){
+        if(s.at(i)=='0'){
+        s.at(i)='1';
+       }
+       else{
+           s.at(i)='0';
+           break;
+       }
+    }
+    return s;
+}
+
+int main()
+{
+    int n;
+    string s,s1,s2;
+    //cout<<"Enter the size\n";
+    cin>>n;
+    //cout<<"Enter the string\n";
+    cin>>s;
+    char a=s.at(0);
+    //Checking the size of the string
+    
+    if(s.size()!=n||n>100000){
+        cout<<"-1";
+        return 0;
+    }
+    // Checking for a binary string
+    for(int i=0;i<n;i++){
+        if(s.at(i)!='0' &&s.at(i)!='1'){
+            cout<<"-1";
+            return 0;
+        }
+    }
+    // Check if the string has all 1's aur all 0's
+     int j=0;
+    for(int i=1;i<n;i++){
+       
+        if(s.at(i)!=a){
+            j=1;
+            break;
+            
+        }
+       
+        
+    }
+    if(j==0){
+        cout<<"-1";
+        return 0;
+    }
+    // Check if the first character of the string is 1 while all the remaining are 0's
+    if(s.at(0)=='1'){
+    for(int i=1;i<n;i++){
+        if(s.at(i)=='1'){
+            j=0;
+            break;
+        }}
+        if(j==1){
+            cout<<"-1";
+            return 0;
+        }
+        
+        
+    }
+    // Get two strings whose average results in the input string
+    s1=sum(s,n);
+    s2=diff(s,n);
+  cout<<s2<<" "<<s1;
+    
+
+    return 0;
+}
+
+
+
