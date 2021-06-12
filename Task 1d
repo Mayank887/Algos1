@@ -1,1 +1,39 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        int a,n,i,j;
+   //cout<<"Enter the no of test cases\n";
+   cin>>a;
+   //cout<<"Enter the no of rows\n";
+    for(int k=0;k<a;k++){
+   cin>>n;
+   // Printing the upper half of the pattern by finding a relationship between i and j for printing ' ' or '*' 
+   for(i=1;i<=n/2+1;i++){
+     for(j=1;j<=n;j++){
+         if(j>n/2-i+2&&j<=n/2+i-1)
+         cout<<" ";
+         else
+         cout<<"*";
+     }
+     cout<<"\n";
+   }
+   // Printing a lower half of the pattern  by finding a relationship between i and j for printing ' ' or '*'
+   for(int i=1;i<=n/2;i++){
+       for(int j=1;j<=n;j++){
+           if(j>i+1&&j<n-i)
+           cout<<" ";
+           else
+           cout<<"*";
+       }
+       cout<<"\n";
+   }
+    }
+    return 0;
+}
