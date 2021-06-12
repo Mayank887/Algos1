@@ -1,1 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+       string s;
+    
+   int n;
+    cin>>n;
+    cin>>s;
+   int i=0;
+   // Comparing the two halves of the string until they are unequal
+   while(n>1){
+       if(s.substr(0,n/2)==s.substr(n/2,n/2)){
+           i++;
+       }
+       else
+       break;
+       s=s.substr(0,n/2);
+       n=n/2;
+   }
+   cout<<i;
+   
+
+ 
+ 
+    return 0;
+}
 
